@@ -5,5 +5,7 @@ get '/' do
 end
 
 get '/hello/:name' do
-    "hello #{params[:name]}"
+    @tian = params[:name]
+    @bao = 'HHHHHHHHHHHHHHHHHHHHHHHHhh'
+    erb :hello
 end
