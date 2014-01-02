@@ -18,3 +18,9 @@ end
 get '/bird/:sex' do
     erb :"hello/world", :layout => :post
 end
+
+get '/more/*/tian/*' do  
+    # http://127.0.0.1:9393/more/haha/tian/just for test
+    params[:splat][0] #  haha
+    params[:splat][1] #  just for test
+end  
