@@ -34,3 +34,8 @@ end
 post '/form' do
     "haha, it is #{params[:message]}"
 end
+
+# if no such a controler
+not_found do
+    halt 404, 'page not found'
+end
