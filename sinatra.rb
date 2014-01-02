@@ -1,5 +1,7 @@
 # ruby --veriosn 2.0.0
+#
 require 'sinatra'
+require 'datamapper'
 set :public_folder, File.dirname(__FILE__) + '/public_folder'
 set :views, File.dirname(__FILE__) + '/views' # this is necessary when using shotgun
 
