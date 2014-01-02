@@ -1,11 +1,13 @@
+# ruby --veriosn 2.0.0
 require 'sinatra'
 set :public_folder, File.dirname(__FILE__) + '/public_folder'
-set :views, File.dirname(__FILE__) + '/views'
+set :views, File.dirname(__FILE__) + '/views' # this is necessary when using shotgun
 
 get '/' do
     'hello worldddd!'
     'hhhhhhhhhhhhhhhhhhhhh' 
-    # gem instal shotgun  autoload the script instead of restart every time where modify something
+    # gem instal shotgun  
+    # autoload the script instead of restart every time where modify something
     # shotgun sinatra.rb
 end
 
@@ -24,3 +26,11 @@ get '/more/*/tian/*' do
     params[:splat][0] #  haha
     params[:splat][1] #  just for test
 end  
+
+get '/form' do
+    erb :form
+end
+
+post '/form' do
+    "haha, it is #{params[:message]}"
+end
