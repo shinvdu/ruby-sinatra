@@ -32,6 +32,11 @@ post '/' do
     redirect '/'  
 end  
 
+get '/rss.xml' do  
+    @notes = Note.all :order => :id.desc  
+    builder :rss  
+end  
+
 get '/:id' do  
     @note = Note.get params[:id]  
     @title = "Edit note ##{params[:id]}"  
@@ -65,6 +70,11 @@ get '/:id/complete' do
     n.updated_at = Time.now  
     n.save  
     redirect '/'  
+end  
+
+helpers do  
+    include Rack::Utils  
+    alias_method :h, :escape_html  
 end  
 # if no such a controler
 not_found do
