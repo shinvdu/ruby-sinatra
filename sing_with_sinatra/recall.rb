@@ -1,6 +1,9 @@
 # ruby --veriosn 2.0.0
 require 'sinatra'
 require 'data_mapper'
+
+SITE_TITLE = "备忘录"  
+SITE_DESCRIPTION = "你太忙了，没时间记，让我来帮你吧"  
 set :public_folder, File.dirname(__FILE__) + '/public'
 set :views, File.dirname(__FILE__) + '/views' # this is necessary when using shotgun
 
