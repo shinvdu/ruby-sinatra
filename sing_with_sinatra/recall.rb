@@ -2,6 +2,11 @@
 require 'sinatra'
 require 'data_mapper'
 
+helpers do  
+    include Rack::Utils  
+    alias_method :h, :escape_html  
+end  
+
 SITE_TITLE = "备忘录"  
 SITE_DESCRIPTION = "你太忙了，没时间记，让我来帮你吧"  
 set :public_folder, File.dirname(__FILE__) + '/public'
