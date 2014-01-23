@@ -14,6 +14,10 @@ class Ttrss_entries < ActiveRecord::Base
 end
 
 get '/hi' do
-    tian = Ttrss_entries.last
+    tian = Ttrss_entries.find(3)
+    tian.content
+end
+get '/hi/:name' do
+    tian = Ttrss_entries.find(params[:name])
     tian.content
 end
