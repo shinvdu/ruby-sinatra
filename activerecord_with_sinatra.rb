@@ -13,6 +13,10 @@ ActiveRecord::Base.establish_connection(
 class Ttrss_entries < ActiveRecord::Base
 end
 
+after do
+      ActiveRecord::Base.connection.close
+end
+
 get '/hi' do
     tian = Ttrss_entries.find(3)
     tian.content
